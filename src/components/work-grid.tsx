@@ -1,8 +1,10 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { MediaFrame } from "@/components/media-frame";
 import { ProjectTile } from "@/components/project-tile";
 import {
   getProjectsBySlug,
+  isLinkedProject,
   workRows,
   type WorkRow,
 } from "@/lib/projects";
@@ -100,8 +102,9 @@ function MatchingShorts({
   return (
     <div className="flex flex-col gap-3">
       <div className="flex aspect-[612/722] w-full flex-col">
-        <Link
-          href={`/work/${top.slug}`}
+        <TileWrap
+          slug={top.slug}
+          title={top.title}
           className="flex shrink-0 flex-col gap-3"
         >
           <MediaFrame
@@ -114,11 +117,11 @@ function MatchingShorts({
             className="aspect-[612/326] w-full"
           />
           <p className="text-[16px] leading-[1.4] text-black">{top.title}</p>
-        </Link>
+        </TileWrap>
         <div className="min-h-0 flex-1" aria-hidden />
-        <Link
-          href={`/work/${bottom.slug}`}
-          aria-label={bottom.title}
+        <TileWrap
+          slug={bottom.slug}
+          title={bottom.title}
           className="shrink-0"
         >
           <MediaFrame
@@ -129,16 +132,38 @@ function MatchingShorts({
             objectFit="cover"
             className="aspect-[612/326] w-full"
           />
-        </Link>
+        </TileWrap>
       </div>
-      <Link
-        href={`/work/${bottom.slug}`}
+      <TileWrap
+        slug={bottom.slug}
         className="text-[16px] leading-[1.4] text-black"
       >
         {bottom.title}
-      </Link>
+      </TileWrap>
     </div>
   );
+}
+
+function TileWrap({
+  slug,
+  title,
+  className,
+  children,
+}: {
+  slug: string;
+  title?: string;
+  className?: string;
+  children: ReactNode;
+}) {
+  if (isLinkedProject(slug)) {
+    return (
+      <Link href={`/work/${slug}`} aria-label={title} className={className}>
+        {children}
+      </Link>
+    );
+  }
+
+  return <div className={className}>{children}</div>;
 }
 
 function rowKey(row: WorkRow) {

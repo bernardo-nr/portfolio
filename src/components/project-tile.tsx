@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { MediaFrame } from "@/components/media-frame";
-import type { Project } from "@/lib/projects";
+import { isLinkedProject, type Project } from "@/lib/projects";
 
 type ProjectTileProps = {
   project: Project;
@@ -13,11 +13,9 @@ export function ProjectTile({
   grow = false,
   priority = false,
 }: ProjectTileProps) {
-  return (
-    <Link
-      href={`/work/${project.slug}`}
-      className={`flex flex-col gap-3 ${grow ? "flex-1" : ""}`}
-    >
+  const className = `flex flex-col gap-3 ${grow ? "flex-1" : ""}`;
+  const content = (
+    <>
       <MediaFrame
         src={project.cover}
         alt={project.title}
@@ -30,6 +28,16 @@ export function ProjectTile({
         }
       />
       <p className="text-[16px] leading-[1.4] text-black">{project.title}</p>
-    </Link>
+    </>
   );
+
+  if (isLinkedProject(project.slug)) {
+    return (
+      <Link href={`/work/${project.slug}`} className={className}>
+        {content}
+      </Link>
+    );
+  }
+
+  return <div className={className}>{content}</div>;
 }

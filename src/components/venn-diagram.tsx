@@ -9,7 +9,7 @@ export function VennDiagram() {
         width={1200}
         height={640}
         unoptimized
-        className="h-auto w-full max-w-[450px] -translate-x-[80px]"
+        className="h-auto w-full max-w-[450px] md:-translate-x-[80px]"
       />
     </div>
   );

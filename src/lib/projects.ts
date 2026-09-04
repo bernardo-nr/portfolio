@@ -196,13 +196,13 @@ export const workRows: WorkRow[] = [
   },
   {
     type: "tall",
-    tallSide: "right",
+    tallSide: "left",
     shorts: ["donut", "lumo"],
     tall: "youtube-go",
   },
   {
     type: "tall",
-    tallSide: "left",
+    tallSide: "right",
     shorts: ["kormo", "bump"],
     tall: "pixelbook",
   },
@@ -212,6 +212,10 @@ export const workRows: WorkRow[] = [
     right: ["nexus-packaging"],
   },
 ];
+
+export function isLinkedProject(slug: string) {
+  return slug === "pixelbook";
+}
 
 export function getProject(slug: string) {
   return projects.find((project) => project.slug === slug);
