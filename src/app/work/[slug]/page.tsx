@@ -29,19 +29,22 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   if (!project) notFound();
 
   return (
-    <main className="flex flex-col gap-10 pt-2">
-      <div className="flex items-center justify-between gap-4 py-2">
-        <h1 className="text-[28px] font-bold leading-none text-[var(--color-project)] md:text-[40px]">
-          {project.slug === "pixelbook" ? "Pixelbook" : project.title}
-        </h1>
-        <Link
-          href="/work"
-          className="text-[22px] leading-none text-[var(--color-text-muted)] md:text-[40px]"
-        >
-          back to work
-        </Link>
-      </div>
+    <main>
+      <header className="sticky top-0 z-20 bg-white py-2">
+        <div className="flex items-center justify-between gap-4">
+          <h1 className="text-[24px] font-bold leading-none text-[var(--color-project)]">
+            {project.slug === "pixelbook" ? "Pixelbook" : project.title}
+          </h1>
+          <Link
+            href="/work"
+            className="text-[24px] leading-none text-[var(--color-text-muted)] transition-colors hover:text-black"
+          >
+            back to work
+          </Link>
+        </div>
+      </header>
 
+      <div className="flex flex-col gap-10 pt-4">
       {project.year || project.team ? (
         <div className="flex flex-col gap-[11px] text-[16px] leading-[1.4] text-[var(--color-project)]">
           {project.year ? <p>{project.year}</p> : null}
@@ -164,6 +167,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           className="aspect-[612/722] w-full md:aspect-[1232/722]"
         />
       )}
+      </div>
     </main>
   );
 }

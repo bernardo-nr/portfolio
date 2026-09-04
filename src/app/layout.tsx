@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Suspense } from "react";
 import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 
@@ -23,7 +24,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full bg-white font-sans text-black">
         <div className="mx-auto w-full max-w-[1280px] px-4 pb-16 md:px-6">
-          <SiteHeader />
+          <Suspense>
+            <SiteHeader />
+          </Suspense>
           {children}
         </div>
       </body>
