@@ -23,7 +23,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full bg-white font-sans text-black">
-        <div className="mx-auto w-full max-w-[1280px] px-4 pb-16 md:px-6">
+        <div className="mx-auto w-full max-w-[1280px] px-4 pb-16">
           <Suspense>
             <SiteHeader />
           </Suspense>

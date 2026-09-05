@@ -6,8 +6,8 @@ import { useLayoutEffect, useRef, useState } from "react";
 import { site } from "@/lib/content";
 
 const links = [
-  { href: "/", label: "tl;dr", key: "tldr" },
-  { href: "/work", label: "work", key: "work" },
+  { href: "/", label: "TL;DR", key: "tldr" },
+  { href: "/work", label: "Work", key: "work" },
 ] as const;
 
 function isActive(pathname: string, key: string) {

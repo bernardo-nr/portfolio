@@ -28,7 +28,7 @@ function WorkRowLayout({
 }) {
   if (row.type === "pairs") {
     return (
-      <div className="grid grid-cols-1 items-start gap-x-6 gap-y-8 lg:grid-cols-2">
+      <div className="grid grid-cols-1 items-start gap-x-4 gap-y-8 lg:grid-cols-2">
         <Column slugs={row.left} priority={priority} />
         <Column slugs={row.right} />
       </div>
@@ -46,7 +46,7 @@ function WorkRowLayout({
   );
 
   return (
-    <div className="grid grid-cols-1 items-start gap-x-6 gap-y-8 lg:grid-cols-2">
+    <div className="grid grid-cols-1 items-start gap-x-4 gap-y-8 lg:grid-cols-2">
       {row.tallSide === "left" ? (
         <>
           {tall}

@@ -24,7 +24,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "sprintmapper",
-    title: "Sprintmapper.com",
+    title: "Sprintmapper.com • Full product",
     cover: "/images/work/sprintmapper.png",
     hoverCover: "/images/work/hover/sprintmapper.png",
     size: "short",
@@ -32,7 +32,7 @@ export const projects: Project[] = [
   },
   {
     slug: "light-noise",
-    title: "Light noise app",
+    title: "Light noise app • Full product",
     cover: "/images/work/light-noise.png",
     hoverCover: "/images/work/hover/light-noise.png",
     size: "short",
@@ -40,7 +40,7 @@ export const projects: Project[] = [
   },
   {
     slug: "youtube-go",
-    title: "Youtube Go",
+    title: "YouTube Go • UX design • User research",
     cover: "/images/work/youtube-go.png",
     hoverCover: "/images/work/hover/youtube-go.png",
     size: "tall",
@@ -50,7 +50,7 @@ export const projects: Project[] = [
   },
   {
     slug: "gogo-games",
-    title: "GoGo Games!",
+    title: "GoGo Games! • UX design • Product development",
     cover: "/images/work/gogo-games.png",
     hoverCover: "/images/work/hover/gogo-games.png",
     size: "tall",
@@ -59,7 +59,7 @@ export const projects: Project[] = [
   },
   {
     slug: "lumo",
-    title: "Lumo",
+    title: "Lumo • UX design • Product development",
     cover: "/images/work/lumo.png",
     hoverCover: "/images/work/hover/lumo.png",
     size: "short",
@@ -76,7 +76,7 @@ export const projects: Project[] = [
   },
   {
     slug: "donut",
-    title: "Donut",
+    title: "Donut • UX design • Product management",
     cover: "/images/work/donut.png",
     hoverCover: "/images/work/hover/donut.png",
     size: "short",
@@ -84,7 +84,7 @@ export const projects: Project[] = [
   },
   {
     slug: "kormo",
-    title: "Kormo",
+    title: "Kormo • Co-founder • UX design • Product development",
     cover: "/images/work/kormo.png",
     hoverCover: "/images/work/hover/kormo.png",
     size: "short",
@@ -92,7 +92,7 @@ export const projects: Project[] = [
   },
   {
     slug: "bump",
-    title: "Bump",
+    title: "Bump • UX design • Product development",
     cover: "/images/work/bump.png",
     hoverCover: "/images/work/hover/bump.png",
     size: "short",
@@ -101,7 +101,7 @@ export const projects: Project[] = [
   },
   {
     slug: "pixelbook",
-    title: "Pixelbook laptop",
+    title: "Pixelbook • Industrial design",
     cover: "/images/work/pixelbook.png",
     hoverCover: "/images/work/hover/pixelbook.png",
     size: "tall",
@@ -160,7 +160,7 @@ export const projects: Project[] = [
   },
   {
     slug: "nexus-packaging",
-    title: "Nexus 6X & 6P packaging",
+    title: "Nexus 6P - Packaging • Packaging design",
     cover: "/images/work/nexus.png",
     hoverCover: "/images/work/hover/nexus.png",
     size: "short",
@@ -169,14 +169,14 @@ export const projects: Project[] = [
   },
   {
     slug: "gatheround",
-    title: "Gatheround",
+    title: "Gatheround - Hand raise • UX design • Product management",
     cover: "/images/work/gatheround.png",
     hoverCover: "/images/work/hover/gatheround.png",
     size: "short",
   },
   {
     slug: "power-adapter",
-    title: "Power adapter",
+    title: "Google power adapter • Industrial design • Packaging design",
     cover: "/images/work/power-adapter.png",
     hoverCover: "/images/work/hover/power-adapter.png",
     size: "short",

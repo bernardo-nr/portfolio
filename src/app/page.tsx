@@ -8,7 +8,7 @@ export default function TldrPage() {
       <HeroVideo />
 
       <section className="py-4">
-        <p className="text-[24px] leading-[1.4] text-[var(--color-text-body)]">
+        <p className="text-[16px] leading-[1.4] text-black">
           {site.bio}
         </p>
       </section>
