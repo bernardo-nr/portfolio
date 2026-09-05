@@ -11,7 +11,7 @@ import {
 
 export function WorkGrid() {
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-4 lg:gap-8">
       {workRows.map((row, index) => (
         <WorkRowLayout key={rowKey(row)} row={row} priority={index === 0} />
       ))}
@@ -28,7 +28,7 @@ function WorkRowLayout({
 }) {
   if (row.type === "pairs") {
     return (
-      <div className="grid grid-cols-1 items-start gap-x-4 gap-y-8 lg:grid-cols-2">
+      <div className="grid grid-cols-1 items-start gap-x-4 gap-y-4 lg:grid-cols-2 lg:gap-y-8">
         <Column slugs={row.left} priority={priority} />
         <Column slugs={row.right} />
       </div>
@@ -46,7 +46,7 @@ function WorkRowLayout({
   );
 
   return (
-    <div className="grid grid-cols-1 items-start gap-x-4 gap-y-8 lg:grid-cols-2">
+    <div className="grid grid-cols-1 items-start gap-x-4 gap-y-4 lg:grid-cols-2 lg:gap-y-8">
       {row.tallSide === "left" ? (
         <>
           {tall}
@@ -72,7 +72,7 @@ function Column({
   const projects = getProjectsBySlug(slugs);
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-4 lg:gap-8">
       {projects.map((project, index) => (
         <ProjectTile
           key={project.slug}
@@ -100,7 +100,12 @@ function MatchingShorts({
   }
 
   return (
-    <div className="flex flex-col gap-3">
+    <>
+    <div className="flex flex-col gap-4 lg:hidden">
+      <ProjectTile project={top} priority={priority} />
+      <ProjectTile project={bottom} />
+    </div>
+    <div className="hidden flex-col gap-3 lg:flex">
       <div className="flex aspect-[612/722] w-full flex-col">
         <TileWrap
           slug={top.slug}
@@ -141,6 +146,7 @@ function MatchingShorts({
         {bottom.title}
       </TileWrap>
     </div>
+    </>
   );
 }
 

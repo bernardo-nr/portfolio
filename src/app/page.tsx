@@ -5,13 +5,12 @@ import { history, site, skills } from "@/lib/content";
 export default function TldrPage() {
   return (
     <main className="flex flex-col gap-6 pt-4">
-      <HeroVideo />
-
-      <section className="py-4">
+      <div className="flex flex-col gap-4">
+        <HeroVideo />
         <p className="text-[16px] leading-[1.4] text-black">
           {site.bio}
         </p>
-      </section>
+      </div>
 
       <VennDiagram />
 
